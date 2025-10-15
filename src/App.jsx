@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TopBar from './components/TopBar';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import CarList from './pages/CarList';
-import CarDetail from './pages/CarDetail';
+import CarDetail from './pages/CarDitail';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/cars" element={<CarList />} />
           <Route path="/cars/:id" element={<CarDetail />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

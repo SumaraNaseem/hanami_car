@@ -42,7 +42,7 @@ console.log(searchQuery,"file comment ");
           {/* Right Section - User Actions */}
           <div className="flex items-center space-x-6">
             {/* Login */}
-            <div className="flex flex-col items-center cursor-pointer hover:opacity-70 transition duration-200">
+            <div className="flex flex-col items-center cursor-pointer  transition duration-200">
               <div className="w-[35px] h-[40px]  overflow-hidden mb-1">
                 <img src={Login} alt="user" className="w-full h-full object-cover" />
               </div>
@@ -50,7 +50,7 @@ console.log(searchQuery,"file comment ");
             </div>
 
             {/* WhatsApp */}
-            <div className="flex flex-col items-center cursor-pointer hover:opacity-70 transition duration-200">
+            <div className="flex flex-col items-center cursor-pointer  transition duration-200">
               <div className="w-[35px] h-[40px]  overflow-hidden  mb-1">
               <img src={whatsapp} alt="icon" className="w-full h-full object-contain" />
 
@@ -59,7 +59,7 @@ console.log(searchQuery,"file comment ");
             </div>
 
             {/* Language Selector */}
-            <div className="flex items-center cursor-pointer hover:opacity-70 transition duration-200">
+            <div className="cursor-pointer -mt-4 transition duration-200">
               <div className="w-[28px] h-[21px]  overflow-hidden  mb-1">
                
                 <img src={language} alt="language" className="w-full h-full object-cover" />

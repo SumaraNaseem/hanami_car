@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import RightSidebar from '../components/RightSidebar';
+import HeroSection from '../components/HeroSection';
+import UsedcarList from '../components/UsedcarList';
+import PriceCalculator from '../components/PriceCalculator';
+import SearchResults from '../components/SearchResults';
+import VehicleTags from '../components/VehicleTags';
+import TopSellersSection from '../components/TopSellersSection';
+import CustomerReviewsSection from '../components/CustomerReviewsSection';
 
 // Sample car data
 const cars = [
@@ -14,10 +21,11 @@ const cars = [
 
 export default function CarList() {
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      <Sidebar />
-      <div className="flex-1 py-8">
-        <div className="max-w-6xl mx-auto px-6">
+    <div className="flex  bg-[#f0f1f2] justify-between px-4">
+      <div className='w-[200px] '> <Sidebar /></div>
+     
+      <div className="flex-1">
+        {/* <div className="max-w-6xl mx-auto px-6">
           <div className="mb-8">
             <Link 
               to="/" 
@@ -47,9 +55,20 @@ export default function CarList() {
               </div>
             ))}
           </div>
+        </div> */}
+        <HeroSection />
+        <UsedcarList/>
+        <PriceCalculator />
+        <SearchResults />
+        <VehicleTags/>
+        <TopSellersSection/>
+        <div className=' mt-6'>
+        <CustomerReviewsSection/>
         </div>
+        
       </div>
-      <RightSidebar />
+      <div className='w-[200px] '><RightSidebar /></div>
+      
     </div>
   );
 }

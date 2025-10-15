@@ -32,7 +32,7 @@ export default function NavBar() {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-medium transition duration-200 py-2">
+              <button className="flex items-center space-x-1 text-gray-700 font-[400] text-[16px] leading-[24px] transition duration-200 py-2">
                 <span>{item.name}</span>
                 <svg 
                   className={`w-4 h-4 transition-transform duration-200 ${
