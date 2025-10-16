@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import star from "../assets/SVG1.png";
 import searchCarImage from "../assets/Searchcar.jpg";
+import vector26 from "../assets/vector26.png";
+
+
 
 function SearchResults() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -682,10 +684,9 @@ function SearchResults() {
         <div>
           <h2 className="text-[14px] leading-[20px] font-[400] mb-2">
             Search Results:
-            <span className="text-[16px] leading-[20px] font-[600]">
-              {" "}
-              {totalResults.toLocaleString()}{" "}
-            </span>{" "}
+            <span className="text-[16px] leading-[24px] font-[600]">
+              {totalResults.toLocaleString()}
+            </span>
           </h2>
           <div className="flex items-center gap-2">
             <div className="flex items-center">
@@ -744,8 +745,8 @@ function SearchResults() {
       </div>
 
       {/* Table Header */}
-      <div className="bg-[#d2d3d4] px-4 py-3 mb-3">
-        <div className="grid grid-cols-12 gap-4 text-sm font-medium text-gray-700">
+      <div className="bg-[#d2d3d4] px-4 py-4 mb-3">
+        <div className="grid grid-cols-12 gap-4  text-[12px] leading-[16px] font-[500] text-gray-700">
           <div className="col-span-3"></div>
           <div className="col-span-2 text-center">Mileage</div>
           <div className="col-span-2 text-center">Engine</div>
@@ -772,65 +773,74 @@ function SearchResults() {
                   <img
                     src={car.image}
                     alt={`${car.year} ${car.make} ${car.model}`}
-                    className="w-24 h-16 object-cover rounded"
+                    className="w-[133px]  h-[100px] object-cover"
                   />
-                  <div>
-                    <div className="text-sm font-semibold text-gray-900">
+                  <div className="text-[14px] leading[20px] font-[500]">
+                    <div className=" text-gray-900">
                       {car.year} {car.make}
                     </div>
-                    <div className="text-sm font-semibold text-gray-900">
+                    <div className=" text-gray-900">
                       {car.model}
                     </div>
-                    <div className="text-sm text-gray-600">{car.capacity}</div>
+                    <div className=" text-gray-600">{car.capacity}</div>
                   </div>
                 </div>
               </div>
 
               {/* Specifications */}
-              <div className="col-span-2 text-center text-sm text-gray-700">
+              <div className="col-span-2 text-center text-[14px] leading-[20px] font-[400] text-gray-700">
                 {car.mileage}
               </div>
-              <div className="col-span-2 text-center text-sm text-gray-700">
+              <div className="col-span-2 text-center text-[12px] leading-[16px] font-[400] text-gray-700">
                 {car.engine}
               </div>
-              <div className="col-span-1 text-center text-sm text-gray-700">
+              <div className="col-span-1 text-center text-[14px] leading-[20px] font-[400] text-gray-700">
                 {car.transmission}
               </div>
-              <div className="col-span-1 text-center text-sm text-gray-700">
+              <div className="col-span-1 text-center text-[14px] leading-[20px] font-[400] text-gray-700">
                 {car.drive}
               </div>
-              <div className="col-span-1 text-center text-sm text-gray-700">
+              <div className="col-span-1 text-center text-[14px] leading-[20px] font-[400] text-gray-700">
                 {car.steering}
               </div>
 
               {/* Price */}
               <div className="col-span-2 text-center">
-                <div className="text-sm text-gray-600 mb-1">Car Price:</div>
-                <div className="text-lg font-bold text-gray-900">
+                <div className="text-[14px] leading-[20px] font-[400] text-gray-600 mb-1">Car Price:</div>
+                <div className="text-[14px] leading-[20px] font-[600] text-gray-800">
                   US$ {car.price}
                 </div>
-                <div className="text-xs text-green-600">
+                <div className="text-[12px] leading-[16px] font-[400] text-gray-600 ">
                   Save: US$ {car.discount} ({car.discountPercent})
                 </div>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex items-center justify-center text-center gap-3 mt-3 ">
+            <div className="flex items-center justify-center text-center gap-4 mt-1 ">
               
                 <button
                   onClick={() => handleCalculatePrice(car.id)}
-                  className="text-red-600 text-sm hover:underline cursor-pointer"
+                  className="text-[#D7061F] text-[14px] leading-[20px] font-[500] hover:underline cursor-pointer"
                 >
                   Click to Calculate
                 </button>
 
                 <button
                   onClick={() => handleInquiry(car.id)}
-                  className="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors cursor-pointer"
+                  className="flex items-center justify-center gap-2 bg-[#D7061F]  px-12 py-2 rounded-md   transition-colors cursor-pointer "
+                  
                 >
-                  <span className="w-4 h-4 bg-white rounded-full inline-block mr-2"></span>
+                  <span className="w-5 h-5   overflow-hidden inline-block">
+                    <img src={vector26} alt="icon" className="w-full h-full object-cover" />   
+                  </span>
+
+                  <h1 className="text-[14px] leading-[20px] font-[400] text-white ">
                   Inquiry
+                  </h1>
+
+
+                  
                 </button>
               
             </div>
