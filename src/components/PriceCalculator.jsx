@@ -57,7 +57,7 @@ function PriceCalculator() {
           <select 
             value={formData.country}
             onChange={(e) => handleInputChange('country', e.target.value)}
-            className="w-full px-3 py-2 sm:py-[5px] border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black text-[10px] sm:text-[11px] lg:text-[11px] font-[400] leading-[14px] sm:leading-[16px] lg:leading-[16px] text-[#2E343B] focus:border-transparent"
+            className="w-full px-3 py-3 sm:py-[10px] border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black text-[10px] sm:text-[11px] lg:text-[11px] font-[400] leading-[14px] sm:leading-[16px] lg:leading-[16px] text-[#2E343B] focus:border-transparent"
           >
             <option value="Japan">Japan</option>
             <option value="USA">USA</option>
@@ -69,7 +69,7 @@ function PriceCalculator() {
           <select 
             value={formData.port}
             onChange={(e) => handleInputChange('port', e.target.value)}
-            className="w-full px-3 py-2 sm:py-[5px] border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black text-[10px] sm:text-[11px] lg:text-[11px] font-[400] leading-[14px] sm:leading-[16px] lg:leading-[16px] text-[#2E343B] focus:border-transparent"
+            className="w-full px-3 py-2 sm:py-[10px] border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black text-[10px] sm:text-[11px] lg:text-[11px] font-[400] leading-[14px] sm:leading-[16px] lg:leading-[16px] text-[#2E343B] focus:border-transparent"
           >
             <option value="Tanzania">Tanzania</option>
             <option value="Kenya">Kenya</option>

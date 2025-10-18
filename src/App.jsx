@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import CarList from './pages/CarList';
 import CarDetail from './pages/CarDitail';
 
+
 export default function App() {
   return (
     <Router>
@@ -29,10 +30,6 @@ export default function App() {
               <CarDetail />
             </PageLayout>
           } />
-        
-          
-       
-         
         </Routes> 
         <Footer />
       </div>

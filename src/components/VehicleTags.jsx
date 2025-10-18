@@ -33,7 +33,7 @@ export default function VehicleTags() {
           {vehicleTags.map((tag, index) => (
             <button
               key={index}
-              className="px-3 py-[6px] rounded-md font-[400] text-[11.15px] leading-[16.54px] transition duration-300 bg-gray-600 text-white "
+              className="px-3 py-[6px] rounded-md font-[400] underline text-[11.85px] leading-[16.54px] transition duration-300 bg-[#6B7280] text-white "
               
             >
               {tag}

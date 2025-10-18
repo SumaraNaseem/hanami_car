@@ -42,7 +42,7 @@ const Specification = () => {
         <div className="">
           {specifications.leftColumn.map((spec, index) => (
             <div key={index} className="grid grid-cols-2 p-[1px] sm:p-[2px] items-center border border-gray-100">
-              <div className={`font-semibold text-gray-700 text-xs sm:text-sm text-center py-2 sm:py-2 border border-gray-100 ${spec.bgColor}`}>
+              <div className={`font-semibold text-gray-700 text-xs sm:text-sm text-start px-3 py-2 sm:py-2 border border-gray-100 ${spec.bgColor}`}>
                 {spec.label}:
               </div>
               <div className={`text-gray-600 text-center text-xs sm:text-sm font-medium py-2 sm:py-2 border border-gray-100 ${spec.bgColor}`}>
@@ -56,7 +56,7 @@ const Specification = () => {
         <div className="">
           {specifications.rightColumn.map((spec, index) => (
             <div key={index} className="grid grid-cols-2 p-[1px] sm:p-[2px] items-center border border-gray-100">
-              <div className={`font-semibold text-gray-700 text-xs sm:text-sm text-center py-2 sm:py-2 border border-gray-100 ${spec.bgColor}`}>
+              <div className={`font-semibold text-gray-700 text-xs sm:text-sm text-start px-3 py-2 sm:py-2 border border-gray-100 ${spec.bgColor}`}>
                 {spec.label}:
               </div>
               <div className={`text-gray-600 text-center text-xs sm:text-sm font-medium py-2 sm:py-2 border border-gray-100 ${spec.bgColor}`}>

@@ -718,7 +718,7 @@ function SearchResults() {
             <select
               value={itemsPerPage}
               onChange={(e) => handleItemsPerPageChange(e.target.value)}
-              className="px-2 py-1 border border-gray-300 rounded text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400]"
+              className="px-4 py-2 border border-gray-300 rounded text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400]"
             >
               <option value={4}>4</option>
               <option value={8}>8</option>
@@ -733,7 +733,7 @@ function SearchResults() {
             <select
               value={sortBy}
               onChange={(e) => handleSortChange(e.target.value)}
-              className="px-2 py-1 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black rounded text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400]"
+              className="px-4z py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black rounded text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400]"
             >
               <option value="New Arrivals">New Arrivals</option>
               <option value="Price Low to High">Price Low to High</option>

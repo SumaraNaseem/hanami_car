@@ -87,11 +87,11 @@ export default function CarDetail() {
         <div className="mt-6">
           <CarDitail/>
           <div className=' grid grid-cols-12 lg:px-6 gap-6'>
-            <div className='lg:col-span-7 col-span-12'>
+            <div className='lg:col-span-8 col-span-12'>
               <Gallery />
               <Specification />
             </div>
-            <div className='lg:col-span-5 col-span-12'>
+            <div className='lg:col-span-4 col-span-12'>
               <CarPrice />
             </div>
           </div>

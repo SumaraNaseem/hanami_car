@@ -39,7 +39,7 @@ export default function CustomerReviewCard({ review }) {
         </div>
         
         {/* Review Text */}
-        <p className="text-gray-700 text-[11px] sm:text-[12px] lg:text-sm leading-relaxed mb-3 sm:mb-4 flex-grow">
+        <p className="text-gray-700 text-[11px] sm:text-[15px] lg:text-[14px] leading-relaxed mb-3 sm:mb-4 flex-grow">
           {review.text}
         </p>
         

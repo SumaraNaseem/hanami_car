@@ -8,8 +8,8 @@ import linkedin from "../assets/Vactor24.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-300">
-      <div className="2xl:max-w-8xl lg:max-w-7xl mx-auto t-6 px-3 sm:px-4 lg:px-6 xl:px-8">
+    <footer className="bg-[#2E343B] text-gray-300">
+      <div className="2xl:max-w-8xl lg:max-w-[103rem] mx-auto t-6 px-3 sm:px-4 lg:px-6 xl:px-8">
         {/* Top Section - Logo and Social Media */}
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-8 py-6 lg:py-8 border-b-2 border-gray-700">
           <div className="lg:col-span-3">
@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="lg:col-span-6">
             <h3 className="text-gray-100 font-semibold mb-3 sm:mb-4 text-[14px] sm:text-[15px] lg:text-base">Quick Menu</h3>
             <ul className="text-[11px] sm:text-[12px] lg:text-sm list-disc list-inside grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
-              <div className="space-y-1">
+              <div className="space-y-5">
                 <li>
                   <a href="#" className="hover:text-white">
                     About Us
@@ -69,7 +69,7 @@ export default function Footer() {
                 </li>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-5">
                 <li>
                   <a href="#" className="hover:text-white">
                     Car Catalog
@@ -87,7 +87,7 @@ export default function Footer() {
                 </li>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-5">
                 <li>
                   <a href="#" className="hover:text-white">
                     How to Buy
@@ -110,7 +110,7 @@ export default function Footer() {
           {/* Office Hours */}
           <div className="lg:col-span-3">
             <h3 className="text-gray-100 font-semibold mb-3 sm:mb-4 text-[14px] sm:text-[15px] lg:text-base">Office Hours</h3>
-            <ul className="space-y-2 sm:space-y-3 text-[11px] sm:text-[12px] lg:text-sm">
+            <ul className="space-y-5 sm:space-y-3 w-[250px] text-[11px] sm:text-[12px] lg:text-sm">
               <li className="flex justify-between">
                 <span>Monday - Friday</span>
                 <span className="font-medium">08:00 - 22:00</span>

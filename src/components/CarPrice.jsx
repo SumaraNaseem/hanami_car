@@ -144,7 +144,7 @@ const CarPrice = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
           <div>
             <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Country</label>
-            <select className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500">
+            <select className="w-full p-2 py-3 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500">
               <option value="USA">USA</option>
               <option value="Canada">Canada</option>
               <option value="UK">UK</option>
