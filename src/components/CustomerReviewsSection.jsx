@@ -63,30 +63,28 @@ export default function CustomerReviewsSection() {
   };
 
   return (
-    <section className=" mx-auto px-6  ">
+    <section className="mx-auto sm:px-4 lg:px-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center space-x-4">
-            <h2 className="font-roboto font-bold text-[20.31px] leading-[27.08px]">Customer Reviews</h2>
-          </div>
-          <button className="border text-[11px] leading-[16px] border-[#D7061F] text-[#D7061F] px-4 py-1 rounded-[4px] bg-white  transition duration-300 font-bold flex items-center gap-1">
-            See More 
-            <img src={svg1} alt="arrow" className="w-[10px] h-[10px]" />
-          </button>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <h2 className="font-roboto font-bold text-[16px] sm:text-[18px] lg:text-[20.31px] leading-[20px] sm:leading-[24px] lg:leading-[27.08px]">Customer Reviews</h2>
+        </div>
+        <button className="border text-[9px] sm:text-[10px] lg:text-[11px] leading-[12px] sm:leading-[14px] lg:leading-[16px] border-[#D7061F] text-[#D7061F] px-3 sm:px-4 py-1 rounded-[4px] bg-white transition duration-300 font-bold flex items-center gap-1">
+          See More 
+          <img src={svg1} alt="arrow" className="w-[7px] h-[7px] sm:w-[8px] sm:h-[8px] lg:w-[10px] lg:h-[10px]" />
+        </button>
       </div>
 
-      <div className=" mx-auto p-6 bg-white">
-        
-        
+      <div className="mx-auto p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow-sm">
         {/* Overall Rating */}
-        <div className="flex items-center justify-between mb-8 ">
-          <div className="flex items-center space-x-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 gap-4 sm:gap-0">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
             <div className="flex">
               {renderOverallStars()}
             </div>
-            <div className="flex items-center space-x-2">
-              <span className="font-roboto font-[700] text-[28.31px] leading-[20.08px]">4.77</span>
-              <a href="#" className="text-blue-600 hover:text-blue-800 underline text-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+              <span className="font-roboto font-[700] text-[20px] sm:text-[24px] lg:text-[28.31px] leading-[16px] sm:leading-[18px] lg:leading-[20.08px]">4.77</span>
+              <a href="#" className="text-blue-600 hover:text-blue-800 underline text-[12px] sm:text-[13px] lg:text-sm">
                 2,776 Reviews
               </a>
             </div>
@@ -94,7 +92,7 @@ export default function CustomerReviewsSection() {
         </div>
         
         {/* Review Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {customerReviews.map((review) => (
             <CustomerReviewCard key={review.id} review={review} />
           ))}

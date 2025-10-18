@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import searchCarImage from "../assets/Searchcar.jpg";
-import vector26 from "../assets/vector26.png";
+import vector26 from "../assets/Vector26.png";
 
 
 
@@ -678,13 +678,13 @@ function SearchResults() {
   const cars = filteredCars.slice(startIndex, endIndex);
 
   return (
-    <section className="  pt-6 px-6 ">
+    <section className="pt-4 sm:pt-6 sm:px-4 lg:px-6">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 sm:mb-6">
         <div>
-          <h2 className="text-[14px] leading-[20px] font-[400] mb-2">
+          <h2 className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[400] mb-2">
             Search Results:
-            <span className="text-[16px] leading-[24px] font-[600]">
+            <span className="text-[14px] sm:text-[15px] lg:text-[16px] leading-[18px] sm:leading-[22px] lg:leading-[24px] font-[600]">
               {totalResults.toLocaleString()}
             </span>
           </h2>
@@ -693,7 +693,7 @@ function SearchResults() {
               {[1, 2, 3, 4, 5].map((i) => (
                 <svg
                   key={i}
-                  className={`w-5 h-5 ${
+                  className={`w-4 h-4 sm:w-5 sm:h-5 ${
                     i <= 5.17 ? "text-orange-400" : "text-gray-300"
                   }`}
                   fill="currentColor"
@@ -702,23 +702,23 @@ function SearchResults() {
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
-              <span className="ml-2 font-semibold">4.77</span>
+              <span className="ml-2 font-semibold text-[12px] sm:text-[13px] lg:text-[14px]">4.77</span>
             </div>
-            <span className="text-[#D7061F] underline text-[11px] leading-[16px] font-[400]">
+            <span className="text-[#D7061F] underline text-[9px] sm:text-[10px] lg:text-[11px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[400]">
               2776 Reviews
             </span>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-0">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 md:mt-0">
           <div className="flex items-center gap-2">
-            <label className="text-[14px] leading-[20px] font-[400] text-gray-700">
+            <label className="text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
               Items per page:
             </label>
             <select
               value={itemsPerPage}
               onChange={(e) => handleItemsPerPageChange(e.target.value)}
-              className="px-2 py-1 border border-gray-300 rounded text-[14px] leading-[20px] font-[400]"
+              className="px-2 py-1 border border-gray-300 rounded text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400]"
             >
               <option value={4}>4</option>
               <option value={8}>8</option>
@@ -727,13 +727,13 @@ function SearchResults() {
           </div>
 
           <div className="flex items-center gap-2">
-            <label className="text-[14px] leading-[20px] font-[400] text-gray-700">
+            <label className="text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
               Sort by:
             </label>
             <select
               value={sortBy}
               onChange={(e) => handleSortChange(e.target.value)}
-              className="px-2 py-1 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black rounded text-[14px] leading-[20px] font-[400]"
+              className="px-2 py-1 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black rounded text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400]"
             >
               <option value="New Arrivals">New Arrivals</option>
               <option value="Price Low to High">Price Low to High</option>
@@ -745,8 +745,8 @@ function SearchResults() {
       </div>
 
       {/* Table Header */}
-      <div className="bg-[#d2d3d4] px-4 py-4 mb-3">
-        <div className="grid grid-cols-12 gap-4  text-[12px] leading-[16px] font-[500] text-gray-700">
+      <div className="bg-[#d2d3d4] px-2 sm:px-4 py-3 sm:py-4 mb-3">
+        <div className="grid grid-cols-12 gap-2 sm:gap-4 text-[10px] sm:text-[11px] lg:text-[12px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[500] text-gray-700">
           <div className="col-span-3"></div>
           <div className="col-span-2 text-center">Mileage</div>
           <div className="col-span-2 text-center">Engine</div>
@@ -758,115 +758,114 @@ function SearchResults() {
       </div>
 
       {/* Car Listings */}
-      <div className="border bg-white  border-gray-200 ">
+      <div className="border bg-white border-gray-200">
         {cars.map((car, index) => (
           <div
             key={car.id}
-            className={`p-4 ${
-              index !== cars.length - 1 ? " border-b-8 border-gray-200" : ""
+            className={`p-3 sm:p-4 ${
+              index !== cars.length - 1 ? " border-b-4 sm:border-b-8 border-gray-200" : ""
             }`}
           >
-            <div className="grid grid-cols-12 gap-4 items-center ">
+            <div className="grid grid-cols-12 gap-2 sm:gap-4 items-center">
               {/* Car Image and Details */}
-              <div className="col-span-3 ">
-                <div className="flex gap-4">
+              <div className="col-span-12 sm:col-span-3 mb-3 sm:mb-0">
+                <div className="flex gap-3 sm:gap-4">
                   <img
                     src={car.image}
                     alt={`${car.year} ${car.make} ${car.model}`}
-                    className="w-[133px]  h-[100px] object-cover"
+                    className="w-[100px] sm:w-[120px] lg:w-[133px] h-[75px] sm:h-[90px] lg:h-[100px] object-cover"
                   />
-                  <div className="text-[14px] leading[20px] font-[500]">
-                    <div className=" text-gray-900">
+                  <div className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[500]">
+                    <div className="text-gray-900">
                       {car.year} {car.make}
                     </div>
-                    <div className=" text-gray-900">
+                    <div className="text-gray-900">
                       {car.model}
                     </div>
-                    <div className=" text-gray-600">{car.capacity}</div>
+                    <div className="text-gray-600">{car.capacity}</div>
                   </div>
                 </div>
               </div>
 
-              {/* Specifications */}
-              <div className="col-span-2 text-center text-[14px] leading-[20px] font-[400] text-gray-700">
-                {car.mileage}
-              </div>
-              <div className="col-span-2 text-center text-[12px] leading-[16px] font-[400] text-gray-700">
-                {car.engine}
-              </div>
-              <div className="col-span-1 text-center text-[14px] leading-[20px] font-[400] text-gray-700">
-                {car.transmission}
-              </div>
-              <div className="col-span-1 text-center text-[14px] leading-[20px] font-[400] text-gray-700">
-                {car.drive}
-              </div>
-              <div className="col-span-1 text-center text-[14px] leading-[20px] font-[400] text-gray-700">
-                {car.steering}
-              </div>
-
-              {/* Price */}
-              <div className="col-span-2 text-center">
-                <div className="text-[14px] leading-[20px] font-[400] text-gray-600 mb-1">Car Price:</div>
-                <div className="text-[14px] leading-[20px] font-[600] text-gray-800">
-                  US$ {car.price}
+              {/* Specifications - Mobile: Stack vertically, Desktop: Grid */}
+              <div className="col-span-12 sm:col-span-9 grid grid-cols-2 sm:grid-cols-9 gap-2 sm:gap-4">
+                <div className="col-span-1 sm:col-span-2 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
+                  <div className="sm:hidden text-[10px] font-[500] mb-1">Mileage</div>
+                  {car.mileage}
                 </div>
-                <div className="text-[12px] leading-[16px] font-[400] text-gray-600 ">
-                  Save: US$ {car.discount} ({car.discountPercent})
+                <div className="col-span-1 sm:col-span-2 text-center text-[10px] sm:text-[11px] lg:text-[12px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[400] text-gray-700">
+                  <div className="sm:hidden text-[10px] font-[500] mb-1">Engine</div>
+                  {car.engine}
+                </div>
+                <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
+                  <div className="sm:hidden text-[10px] font-[500] mb-1">Trans</div>
+                  {car.transmission}
+                </div>
+                <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
+                  <div className="sm:hidden text-[10px] font-[500] mb-1">Drive</div>
+                  {car.drive}
+                </div>
+                <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
+                  <div className="sm:hidden text-[10px] font-[500] mb-1">Steering</div>
+                  {car.steering}
+                </div>
+
+                {/* Price */}
+                <div className="col-span-2 sm:col-span-2 text-center">
+                  <div className="text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-600 mb-1">Car Price:</div>
+                  <div className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[600] text-gray-800">
+                    US$ {car.price}
+                  </div>
+                  <div className="text-[10px] sm:text-[11px] lg:text-[12px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[400] text-gray-600">
+                    Save: US$ {car.discount} ({car.discountPercent})
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex items-center justify-center text-center gap-4 mt-1 ">
-              
-                <button
-                  onClick={() => handleCalculatePrice(car.id)}
-                  className="text-[#D7061F] text-[14px] leading-[20px] font-[500] hover:underline cursor-pointer"
-                >
-                  Click to Calculate
-                </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-3 sm:gap-4 mt-3 sm:mt-1">
+              <button
+                onClick={() => handleCalculatePrice(car.id)}
+                className="text-[#D7061F] text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[500] hover:underline cursor-pointer"
+              >
+                Click to Calculate
+              </button>
 
-                <button
-                  onClick={() => handleInquiry(car.id)}
-                  className="flex items-center justify-center gap-2 bg-[#D7061F]  px-12 py-2 rounded-md   transition-colors cursor-pointer "
-                  
-                >
-                  <span className="w-5 h-5   overflow-hidden inline-block">
-                    <img src={vector26} alt="icon" className="w-full h-full object-cover" />   
-                  </span>
-
-                  <h1 className="text-[14px] leading-[20px] font-[400] text-white ">
+              <button
+                onClick={() => handleInquiry(car.id)}
+                className="flex items-center justify-center gap-2 bg-[#D7061F] px-8 sm:px-10 lg:px-12 py-2 rounded-md transition-colors cursor-pointer w-full sm:w-auto"
+              >
+                <span className="w-4 h-4 sm:w-5 sm:h-5 overflow-hidden inline-block">
+                  <img src={vector26} alt="icon" className="w-full h-full object-cover" />   
+                </span>
+                <h1 className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[400] text-white">
                   Inquiry
-                  </h1>
-
-
-                  
-                </button>
-              
+                </h1>
+              </button>
             </div>
           </div>
         ))}
       </div>
 
       {/* Pagination Footer */}
-      <div className="flex flex-col  items-center mt-6  border-gray-700">
-        <div className="text-[14px] leading-[20px] font-[400] text-gray-600 mb-4 ">
+      <div className="flex flex-col items-center mt-4 sm:mt-6 border-gray-700">
+        <div className="text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-600 mb-3 sm:mb-4">
           Showing{" "}
           <span className="font-[600]">
-            {" "}
             {(currentPage - 1) * itemsPerPage + 1}-
             {Math.min(currentPage * itemsPerPage, totalResults)}{" "}
           </span>{" "}
           of{" "}
-          <span className=" font-[600]"> {totalResults.toLocaleString()} </span>{" "}
+          <span className="font-[600]"> {totalResults.toLocaleString()} </span>{" "}
           results
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <button
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
-            className="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-2 sm:px-3 py-1 border border-gray-300 rounded text-[10px] sm:text-[11px] lg:text-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             &lt;
           </button>
@@ -889,7 +888,7 @@ function SearchResults() {
                 <button
                   key={i}
                   onClick={() => handlePageChange(i)}
-                  className={`px-3 py-1 border rounded text-sm ${
+                  className={`px-2 sm:px-3 py-1 border rounded text-[10px] sm:text-[11px] lg:text-sm ${
                     currentPage === i
                       ? "bg-red-600 text-white border-red-600"
                       : "border-gray-300 bg-white hover:bg-gray-50"
@@ -904,7 +903,7 @@ function SearchResults() {
           })()}
 
           {totalPages > 5 && currentPage < totalPages - 2 && (
-            <span className="px-3 py-1 border border-gray-300 rounded bg-white">
+            <span className="px-2 sm:px-3 py-1 border border-gray-300 rounded bg-white text-[10px] sm:text-[11px] lg:text-sm">
               ...
             </span>
           )}
@@ -912,7 +911,7 @@ function SearchResults() {
           <button
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
-            className="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-2 sm:px-3 py-1 border border-gray-300 rounded text-[10px] sm:text-[11px] lg:text-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             &gt;
           </button>

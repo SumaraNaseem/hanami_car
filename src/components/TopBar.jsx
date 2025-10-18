@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
 import Login from "../assets/login.png";
 import whatsapp from "../assets/whatsapp.png";
@@ -6,19 +7,26 @@ import language from "../assets/languae.png";
 
 export default function TopBar() {
   const [searchQuery, setSearchQuery] = useState('');
-console.log(searchQuery,"file comment ");
+  console.log(searchQuery,"file comment ");
+
+  const toggleSidebar = () => {
+    console.log('TopBar: Toggle sidebar button clicked');
+    window.dispatchEvent(new CustomEvent('toggleSidebar'));
+  };
 
   return (
-    <header className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-1 sm:py-1">
+    <header className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-3 sm:py-2">
       <div className="max-w-7xl mx-auto">
         {/* Desktop Layout (lg and above) */}
         <div className="hidden lg:flex items-center justify-between">
           {/* Left Section - Logo and Brand */}
           <div className="flex items-center space-x-3">
-            <div className="w-[77px] h-[77px] overflow-hidden ">
-              <img src={logo} alt="logo" className="w-full h-full object-cover" />
-            </div>
-            <h1 className="text-[24px] font-[900] font-inter">Hanami</h1>
+            <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition duration-200">
+              <div className="w-[77px] h-[77px] overflow-hidden ">
+                <img src={logo} alt="logo" className="w-full h-full object-cover" />
+              </div>
+              <h1 className="text-[24px] font-[900] font-inter">Hanami</h1>
+            </Link>
           </div>
 
           {/* Middle Section - Search Bar */}
@@ -72,10 +80,12 @@ console.log(searchQuery,"file comment ");
         <div className="hidden md:flex lg:hidden items-center justify-between">
           {/* Left Section - Logo and Brand */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-[#D7061F] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">G</span>
-            </div>
-            <h1 className="text-xl font-bold text-black">Hanami</h1>
+            <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition duration-200">
+              <div className="w-8 h-8 bg-[#D7061F] rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">G</span>
+              </div>
+              <h1 className="text-xl font-bold text-black">Hanami</h1>
+            </Link>
           </div>
 
           {/* Middle Section - Search Bar */}
@@ -134,12 +144,25 @@ console.log(searchQuery,"file comment ");
 
         {/* Mobile Layout (sm and below) */}
         <div className="flex md:hidden items-center justify-between">
-          {/* Left Section - Logo and Brand */}
-          <div className="flex items-center space-x-2">
-            <div className="w-7 h-7 bg-[#D7061F] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xs">G</span>
-            </div>
-            <h1 className="text-lg font-bold text-black">Hanami</h1>
+          {/* Left Section - Sidebar Toggle and Logo */}
+          <div className="flex items-center space-x-3">
+            {/* Sidebar Toggle Button */}
+            <button
+              onClick={toggleSidebar}
+              className=" text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition duration-200"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            
+            {/* Logo and Brand */}
+            <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition duration-200">
+              <div className="w-7 h-7 bg-[#D7061F] rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-xs">G</span>
+              </div>
+              <h1 className="text-lg font-bold text-black">Hanami</h1>
+            </Link>
           </div>
 
           {/* Right Section - User Actions */}

@@ -155,7 +155,7 @@ const Gallery = () => {
       </div>
 
       {/* Thumbnail Grid */}
-      <div className="px-4 pt-8">
+      <div className=" px-2 sm:px-4 pt-8">
 
         <div className="grid grid-cols-6 gap-2 pb-8 ">
           {carImages.slice(0, 100).map((image, index) => (

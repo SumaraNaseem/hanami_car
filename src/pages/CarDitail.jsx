@@ -1,5 +1,4 @@
 import { Link, useParams } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
 import VehicleTags from '../components/VehicleTags';
 import TopSellersSection from '../components/TopSellersSection';
 import CustomerReviewsSection from '../components/CustomerReviewsSection';
@@ -84,33 +83,31 @@ export default function CarDetail() {
 
   if (!car) {
     return (
-      <div className="flex min-h-screen bg-gray-50">
-        <Sidebar />
-        <div className="flex-1 ">
-        <CarDitail/>
-          <div className=' grid grid-cols-12 px-6 gap-6'>
-            <div className='col-span-7'>
+      <div className="min-h-screen ">
+        <div className="mt-6">
+          <CarDitail/>
+          <div className=' grid grid-cols-12 lg:px-6 gap-6'>
+            <div className='lg:col-span-7 col-span-12'>
               <Gallery />
               <Specification />
             </div>
-            <div className='col-span-5'>
+            <div className='lg:col-span-5 col-span-12'>
               <CarPrice />
             </div>
           </div>
-        <VehicleTags/>
-        <TopSellersSection/>
-        <div className=' mt-6'>
-        <CustomerReviewsSection/>
-        </div>
+          <VehicleTags/>
+          <TopSellersSection/>
+          <div className=' mt-6'>
+            <CustomerReviewsSection/>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      <Sidebar />
-      <div className="flex-1 py-8">
+    <div className="min-h-screen bg-gray-50">
+      <div className="py-8">
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-6">
             <Link 

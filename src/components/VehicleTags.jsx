@@ -22,7 +22,7 @@ export default function VehicleTags() {
 
   return (
     <section className="py-6 ">
-      <div className=" mx-auto px-6">
+      <div className=" mx-auto lg:px-6">
         {/* Header */}
         <div className=" mb-8">
           <h2 className="font-roboto font-bold text-[20.31px] leading-[27.08px]">Vehicle Tags</h2>

@@ -13,9 +13,9 @@ export default function RightSidebar() {
   const [isAccountExpanded, setIsAccountExpanded] = useState(false);
 
   return (
-    <div className="mt-6  h-full overflow-y-auto">
+    <div className="  h-full overflow-y-auto">
       {/* Create Account Section */}
-      <div className="p-3 border-b rounded-lg mb-2 bg-white ">
+      <div className="p-2 border-b rounded-lg mb-2 bg-white ">
         <div className="flex items-center space-x-2 mb-2 ">
           <div className="w-[15px] h-[15px] overflow-hidden ">
             <img src={user} alt="user" className='w-full h-full object-cover' />
@@ -71,7 +71,7 @@ export default function RightSidebar() {
       </div>
 
       {/* Follow Us Section */}
-      <div className="p-6">
+      <div className="p-6 border-t-2 mt-4 border-b-2  border-red-500 ">
         <h3 className="text-[14px] leading-[14px] font-[700] text-gray-800 mb-4">Follow us on:</h3>
         
         {/* Social Media Icons */}

@@ -1,4 +1,3 @@
-import Sidebar from '../components/Sidebar';
 import RightSidebar from '../components/RightSidebar';
 import HeroSection from '../components/HeroSection';
 import UsedCar from '../components/UsedCar';
@@ -11,25 +10,22 @@ import NewArrivals from '../components/NewArrivals';
 
 export default function Home() {
   return (
-    <div className="flex  bg-[#f0f1f2] justify-between px-4">
-      
-      <div className='w-[200px]  '><Sidebar /></div>
-
-      <div className="flex-1">
+    <div className="md:flex mb-6 bg-[#f0f1f2] justify-between">
+      <div className="flex-1 mt-6">
         <HeroSection />
-        <UsedCar/>
-        <CarTabs/>
+      <UsedCar/>
+       <CarTabs/>
         <ClearanceSection />
-        <NewArrivals />
-        <TopSellersSection />
-        <VehicleTags />
-        <CustomerReviewsSection />
+        
+         <NewArrivals />
+      <TopSellersSection />
+         <VehicleTags />
+        <CustomerReviewsSection /> 
       </div>
 
-      <div className='w-[200px] '>
-      <RightSidebar />
+      <div className='lg:w-[250px]  w-full mt-6'>
+        <RightSidebar />
       </div>                                                     
-
     </div>
   );
 }

@@ -6,7 +6,7 @@ export default function CustomerReviewCard({ review }) {
       stars.push(
         <svg
           key={i}
-          className={`w-4 h-4 ${i <= rating ? 'text-orange-400' : 'text-gray-300'}`}
+          className={`w-3 h-3 sm:w-4 sm:h-4 ${i <= rating ? 'text-orange-400' : 'text-gray-300'}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -18,40 +18,38 @@ export default function CustomerReviewCard({ review }) {
   };
 
   return (
-    <div className=" transition duration-300">
+    <div className="transition duration-300 bg-white rounded-lg shadow-sm hover:shadow-md p-3 sm:p-4">
       {/* Reviewer Image */}
-      
-      <div className="w-full h-[265px] overflow-hidden mb-3 ">
+      <div className="w-full h-[180px] sm:h-[220px] lg:h-[265px] overflow-hidden mb-3 rounded-lg">
         <img src={carImage} alt="Car" className="w-full h-full object-cover" />
       </div>
       
-      <div className="flex flex-col h-[230px] ">
-      {/* Product/Service Reviewed */}
-      <div className=" flex items-center gap-1 mb-3 ">
-        <p className="text-sm text-gray-600">Review on</p>
-        <a href="#" className="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
-          {review.productName}
-        </a>
+      <div className="flex flex-col min-h-[180px] sm:min-h-[200px] lg:min-h-[230px]">
+        {/* Product/Service Reviewed */}
+        <div className="flex items-center gap-1 mb-2 sm:mb-3">
+          <p className="text-[11px] sm:text-[12px] lg:text-sm text-gray-600">Review on</p>
+          <a href="#" className="text-blue-600 hover:text-blue-800 underline text-[11px] sm:text-[12px] lg:text-sm font-medium">
+            {review.productName}
+          </a>
+        </div>
+        
+        {/* Individual Rating */}
+        <div className="flex mb-2 sm:mb-3">
+          {renderStars(review.rating)}
+        </div>
+        
+        {/* Review Text */}
+        <p className="text-gray-700 text-[11px] sm:text-[12px] lg:text-sm leading-relaxed mb-3 sm:mb-4 flex-grow">
+          {review.text}
+        </p>
+        
+        {/* Reviewer Name */}
+        <div className="mt-auto">
+          <a href="#" className="text-blue-600 hover:text-blue-800 underline text-[11px] sm:text-[12px] lg:text-sm font-medium">
+            {review.reviewerName}
+          </a>
+        </div>
       </div>
-      
-      {/* Individual Rating */}
-      <div className="flex  mb-3">
-        {renderStars(review.rating)}
-      </div>
-      
-      {/* Review Text */}
-      <p className="text-gray-700 text-sm leading-relaxed  ">
-        {review.text}
-      </p>
-      
-      {/* Reviewer Name */}
-      <div className="">
-        <a href="#" className="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
-          {review.reviewerName}
-        </a>
-      </div>
-      </div>
-
     </div>
   );
 }
