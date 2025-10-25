@@ -745,7 +745,7 @@ function SearchResults() {
       </div>
 
       {/* Table Header */}
-      <div className="bg-[#d2d3d4] px-2 sm:px-4 py-3 sm:py-4 mb-3">
+      <div className="bg-[#d2d3d4] hidden lg:block px-2 sm:px-4 py-3 sm:py-4 mb-3">
         <div className="grid grid-cols-12 gap-2 sm:gap-4 text-[10px] sm:text-[11px] lg:text-[12px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[500] text-gray-700">
           <div className="col-span-3"></div>
           <div className="col-span-2 text-center">Mileage</div>
@@ -762,87 +762,141 @@ function SearchResults() {
         {cars.map((car, index) => (
           <div
             key={car.id}
-            className={`p-3 sm:p-4 ${
-              index !== cars.length - 1 ? " border-b-4 sm:border-b-8 border-gray-200" : ""
+            className={`p-4 sm:p-4 ${
+              index !== cars.length - 1 ? " border-b-2 sm:border-b-8 border-gray-200" : ""
             }`}
           >
-            <div className="grid grid-cols-12 gap-2 sm:gap-4 items-center">
-              {/* Car Image and Details */}
-              <div className="col-span-12 sm:col-span-3 mb-3 sm:mb-0">
-                <div className="flex gap-3 sm:gap-4">
-                  <img
-                    src={car.image}
-                    alt={`${car.year} ${car.make} ${car.model}`}
-                    className="w-[100px] sm:w-[120px] lg:w-[133px] h-[75px] sm:h-[90px] lg:h-[100px] object-cover"
-                  />
-                  <div className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[500]">
-                    <div className="text-gray-900">
-                      {car.year} {car.make}
+            {/* Mobile Layout */}
+            <div className="block sm:hidden">
+              {/* Car Image and Details - Matching Image Layout */}
+              <div className="flex gap-4 mb-4">
+                <div>
+                  
+                </div>
+                <img
+                  src={car.image}
+                  alt={`${car.year} ${car.make} ${car.model}`}
+                  className="w-[100px] h-[75px] object-cover"
+                />
+                <div className="flex-1">
+                  {/* Main Car Title - Large Bold */}
+                  <div className="text-[16px] leading-[20px] font-[700] text-gray-900 mb-1">
+                    {car.year} {car.make} {car.model}
+                  </div>
+                  
+                  {/* Capacity/Model Details - Bold */}
+                  <div className="text-[14px] leading-[18px] font-[600] text-gray-900 mb-1">
+                    {car.capacity}
+                  </div>
+                  
+                  {/* Specifications - Smaller Gray */}
+                  <div className="text-[12px] leading-[14px] font-[400] text-gray-600 mb-2">
+                    {car.year}, {car.mileage}, {car.drive}, {car.steering}
+                  </div>
+                  
+                  {/* Price Section */}
+                  <div className="mb-2">
+                    <div className="text-[12px] leading-[14px] font-[400] text-gray-600 mb-1">
+                      Car Price: <span className="text-[14px] font-[700] text-gray-900">US$ {car.price}</span>
                     </div>
-                    <div className="text-gray-900">
-                      {car.model}
+                    <div className="text-[10px] leading-[12px] font-[400] text-red-600">
+                      Click to Calculate
                     </div>
-                    <div className="text-gray-600">{car.capacity}</div>
                   </div>
                 </div>
               </div>
 
-              {/* Specifications - Mobile: Stack vertically, Desktop: Grid */}
-              <div className="col-span-12 sm:col-span-9 grid grid-cols-2 sm:grid-cols-9 gap-2 sm:gap-4">
-                <div className="col-span-1 sm:col-span-2 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
-                  <div className="sm:hidden text-[10px] font-[500] mb-1">Mileage</div>
-                  {car.mileage}
-                </div>
-                <div className="col-span-1 sm:col-span-2 text-center text-[10px] sm:text-[11px] lg:text-[12px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[400] text-gray-700">
-                  <div className="sm:hidden text-[10px] font-[500] mb-1">Engine</div>
-                  {car.engine}
-                </div>
-                <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
-                  <div className="sm:hidden text-[10px] font-[500] mb-1">Trans</div>
-                  {car.transmission}
-                </div>
-                <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
-                  <div className="sm:hidden text-[10px] font-[500] mb-1">Drive</div>
-                  {car.drive}
-                </div>
-                <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
-                  <div className="sm:hidden text-[10px] font-[500] mb-1">Steering</div>
-                  {car.steering}
-                </div>
-
-                {/* Price */}
-                <div className="col-span-2 sm:col-span-2 text-center">
-                  <div className="text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-600 mb-1">Car Price:</div>
-                  <div className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[600] text-gray-800">
-                    US$ {car.price}
-                  </div>
-                  <div className="text-[10px] sm:text-[11px] lg:text-[12px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[400] text-gray-600">
-                    Save: US$ {car.discount} ({car.discountPercent})
-                  </div>
-                </div>
+              {/* Detail Button */}
+              <div className="flex justify-center">
+                <button
+                  onClick={() => handleInquiry(car.id)}
+                  className="bg-[#D7061F] text-white px-8 py-2 rounded-md text-[14px] font-[500] hover:bg-red-700 transition-colors"
+                >
+                  Detail >
+                </button>
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-3 sm:gap-4 mt-3 sm:mt-1">
-              <button
-                onClick={() => handleCalculatePrice(car.id)}
-                className="text-[#D7061F] text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[500] hover:underline cursor-pointer"
-              >
-                Click to Calculate
-              </button>
+            {/* Desktop Layout */}
+            <div className="hidden sm:block">
+              <div className="grid grid-cols-12 gap-2 sm:gap-4 items-center">
+                {/* Car Image and Details */}
+                <div className="col-span-12 sm:col-span-3 mb-3 sm:mb-0">
+                  <div className="flex gap-3 sm:gap-4">
+                    <img
+                      src={car.image}
+                      alt={`${car.year} ${car.make} ${car.model}`}
+                      className="w-[100px] sm:w-[120px] lg:w-[133px] h-[75px] sm:h-[90px] lg:h-[100px] object-cover"
+                    />
+                    <div className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[500]">
+                      <div className="text-gray-900">
+                        {car.year} {car.make}
+                      </div>
+                      <div className="text-gray-900">
+                        {car.model}
+                      </div>
+                      <div className="text-gray-600">{car.capacity}</div>
+                    </div>
+                  </div>
+                </div>
 
-              <button
-                onClick={() => handleInquiry(car.id)}
-                className="flex items-center justify-center gap-2 bg-[#D7061F] px-8 sm:px-10 lg:px-12 py-2 rounded-md transition-colors cursor-pointer w-full sm:w-auto"
-              >
-                <span className="w-4 h-4 sm:w-5 sm:h-5 overflow-hidden inline-block">
-                  <img src={vector26} alt="icon" className="w-full h-full object-cover" />   
-                </span>
-                <h1 className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[400] text-white">
-                  Inquiry
-                </h1>
-              </button>
+                {/* Specifications - Desktop: Grid */}
+                <div className="col-span-12 sm:col-span-9 grid grid-cols-2 sm:grid-cols-9 gap-2 sm:gap-4">
+                  <div className="col-span-1 sm:col-span-2 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
+                    <div className="sm:hidden text-[10px] font-[500] mb-1">Mileage</div>
+                    {car.mileage}
+                  </div>
+                  <div className="col-span-1 sm:col-span-2 text-center text-[10px] sm:text-[11px] lg:text-[12px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[400] text-gray-700">
+                    <div className="sm:hidden text-[10px] font-[500] mb-1">Engine</div>
+                    {car.engine}
+                  </div>
+                  <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
+                    <div className="sm:hidden text-[10px] font-[500] mb-1">Trans</div>
+                    {car.transmission}
+                  </div>
+                  <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
+                    <div className="sm:hidden text-[10px] font-[500] mb-1">Drive</div>
+                    {car.drive}
+                  </div>
+                  <div className="col-span-1 sm:col-span-1 text-center text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-700">
+                    <div className="sm:hidden text-[10px] font-[500] mb-1">Steering</div>
+                    {car.steering}
+                  </div>
+
+                  {/* Price */}
+                  <div className="col-span-2 sm:col-span-2 text-center">
+                    <div className="text-[11px] sm:text-[12px] lg:text-[14px] leading-[14px] sm:leading-[16px] lg:leading-[20px] font-[400] text-gray-600 mb-1">Car Price:</div>
+                    <div className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[600] text-gray-800">
+                      US$ {car.price}
+                    </div>
+                    <div className="text-[10px] sm:text-[11px] lg:text-[12px] leading-[12px] sm:leading-[14px] lg:leading-[16px] font-[400] text-gray-600">
+                      Save: US$ {car.discount} ({car.discountPercent})
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons - Desktop */}
+              <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-3 sm:gap-4 mt-3 sm:mt-1">
+                <button
+                  onClick={() => handleCalculatePrice(car.id)}
+                  className="text-[#D7061F] text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[500] hover:underline cursor-pointer"
+                >
+                  Click to Calculate
+                </button>
+
+                <button
+                  onClick={() => handleInquiry(car.id)}
+                  className="flex items-center justify-center gap-2 bg-[#D7061F] px-8 sm:px-10 lg:px-12 py-2 rounded-md transition-colors cursor-pointer w-full sm:w-auto"
+                >
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 overflow-hidden inline-block">
+                    <img src={vector26} alt="icon" className="w-full h-full object-cover" />   
+                  </span>
+                  <h1 className="text-[12px] sm:text-[13px] lg:text-[14px] leading-[16px] sm:leading-[18px] lg:leading-[20px] font-[400] text-white">
+                    Inquiry
+                  </h1>
+                </button>
+              </div>
             </div>
           </div>
         ))}

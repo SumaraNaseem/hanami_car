@@ -91,8 +91,19 @@ export default function CustomerReviewsSection() {
           </div>
         </div>
         
-        {/* Review Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        {/* Review Cards - Mobile Scroll, Desktop Grid */}
+        <div className="block sm:hidden">
+          {/* Mobile: Horizontal Scroll */}
+          <div className="flex overflow-x-auto gap-4 pb-2 scrollbar-hide">
+            {customerReviews.map((review) => (
+              <div key={review.id} className="flex-shrink-0 w-[280px]">
+                <CustomerReviewCard review={review} />
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {customerReviews.map((review) => (
             <CustomerReviewCard key={review.id} review={review} />
           ))}

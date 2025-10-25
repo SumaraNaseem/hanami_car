@@ -25,8 +25,19 @@ export default function TopSellersSection() {
           <h2 className="font-roboto font-bold text-[16px] sm:text-[18px] lg:text-[20.31px] leading-[20px] sm:leading-[24px] lg:leading-[27.08px]">Top Sellers in USA</h2>
         </div>
         
-        {/* Seller Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
+        {/* Seller Grid - Mobile Scroll, Desktop Grid */}
+        <div className="block sm:hidden">
+          {/* Mobile: Horizontal Scroll */}
+          <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
+            {topSellers.map((seller) => (
+              <div key={seller.id} className="flex-shrink-0 w-[200px]">
+                <TopSellerCard seller={seller} />
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
           {topSellers.map((seller) => (
             <TopSellerCard key={seller.id} seller={seller} />
           ))}

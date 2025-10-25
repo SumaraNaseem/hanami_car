@@ -36,8 +36,19 @@ export default function ClearanceSection() {
           </button>
         </div>
         
-        {/* Car Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
+        {/* Car Grid - Mobile Scroll, Desktop Grid */}
+        <div className="block sm:hidden">
+          {/* Mobile: Horizontal Scroll */}
+          <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
+            {clearanceCars.map((car) => (
+              <div key={car.id} className="flex-shrink-0 w-[200px]">
+                <ClearanceCarCard car={car} />
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
           {clearanceCars.map((car) => (
             <ClearanceCarCard key={car.id} car={car} />
           ))}

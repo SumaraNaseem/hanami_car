@@ -7,7 +7,7 @@ export default function ClearanceCarCard({ car }) {
   return (
     <div className="overflow-hidden transition duration-300 bg-white rounded-lg shadow-sm hover:shadow-md">
       {/* Car Image */}
-      <div className="overflow-hidden bg-gray-200 flex items-center justify-center h-[215px] sm:h-[140px] lg:h-[160px]">
+      <div className="overflow-hidden bg-gray-200 flex items-center justify-center h-[161px] sm:h-[140px] lg:h-[160px]">
          <img src={carImage} alt={car.name} className="w-full h-full object-cover" />
       </div>
         
