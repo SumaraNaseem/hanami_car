@@ -7,11 +7,27 @@ import language from "../assets/languae.png";
 
 export default function TopBar() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [showSearchModal, setShowSearchModal] = useState(false);
   console.log(searchQuery,"file comment ");
 
   const toggleSidebar = () => {
     console.log('TopBar: Toggle sidebar button clicked');
     window.dispatchEvent(new CustomEvent('toggleSidebar'));
+  };
+
+  const handleSearchClick = () => {
+    setShowSearchModal(true);
+  };
+
+  const handleSearchClose = () => {
+    setShowSearchModal(false);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    // Handle search logic here
+    console.log('Search query:', searchQuery);
+    setShowSearchModal(false);
   };
 
   return (
@@ -168,7 +184,10 @@ export default function TopBar() {
           {/* Right Section - User Actions */}
           <div className="flex items-center space-x-3">
             {/* Search Icon */}
-            <div className="cursor-pointer hover:opacity-70 transition duration-200">
+            <div 
+              onClick={handleSearchClick}
+              className="cursor-pointer hover:opacity-70 transition duration-200"
+            >
               <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
@@ -206,6 +225,83 @@ export default function TopBar() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Search Modal */}
+      {showSearchModal && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-[9999] md:hidden flex items-start justify-center pt-4"
+          onClick={handleSearchClose}
+        >
+          <div 
+            className="bg-white w-full mx-4 rounded-lg shadow-xl animate-slide-down"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+              <h2 className="text-base sm:text-lg font-semibold text-gray-900">Search Cars</h2>
+              <button
+                onClick={handleSearchClose}
+                className="text-gray-500 hover:text-gray-700 p-1 transition-colors"
+              >
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            {/* Search Form */}
+            <form onSubmit={handleSearchSubmit} className="p-4 space-y-3">
+              <div className="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="Free word (ex. model code)"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  autoFocus
+                />
+                <button
+                  type="submit"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#D7061F] text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors text-sm font-medium"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
+
+            {/* Quick Search Suggestions (Optional) */}
+            <div className="px-4 pb-4">
+              <div className="text-xs font-medium text-gray-500 uppercase mb-2">Quick Search</div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setSearchQuery('Toyota')}
+                  className="px-3 py-1.5 text-xs bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
+                >
+                  Toyota
+                </button>
+                <button
+                  onClick={() => setSearchQuery('Honda')}
+                  className="px-3 py-1.5 text-xs bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
+                >
+                  Honda
+                </button>
+                <button
+                  onClick={() => setSearchQuery('Nissan')}
+                  className="px-3 py-1.5 text-xs bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
+                >
+                  Nissan
+                </button>
+                <button
+                  onClick={() => setSearchQuery('BMW')}
+                  className="px-3 py-1.5 text-xs bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
+                >
+                  BMW
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
