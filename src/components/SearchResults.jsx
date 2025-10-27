@@ -812,7 +812,7 @@ function SearchResults() {
                   onClick={() => handleInquiry(car.id)}
                   className="bg-[#D7061F] text-white px-8 py-2 rounded-md text-[14px] font-[500] hover:bg-red-700 transition-colors"
                 >
-                  Detail >
+                  Detail 
                 </button>
               </div>
             </div>
