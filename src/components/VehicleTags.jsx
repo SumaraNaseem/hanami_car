@@ -1,16 +1,8 @@
 import { useState } from 'react';
+import { vehicleTags } from '../data/mockData';
 
 export default function VehicleTags() {
   const [selectedTags, setSelectedTags] = useState([]);
-
-  const vehicleTags = [
-    // First row
-    'Vans', 'High Deck', 'Low Deck', '6 nuts', 'Truck', 'Air Brake',
-    'Dump', 'Refrigerator(Freezer)', 'Flat Body', 'Box Body', 'Tanker', 'Vacuum',
-    // Second row
-    'Other', 'Sun Roof', 'Carrier', 'A/C', 'Push Start', 'Excavators',
-    'Forklifts', 'JDM', 'Kei Truck'
-  ];
 
   const handleTagClick = (tag) => {
     setSelectedTags(prev => 

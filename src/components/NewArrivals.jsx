@@ -1,22 +1,6 @@
 import ClearanceCarCard from './ClearanceCarCard';
 import svg1 from '../assets/SVG1.png';
-
-const clearanceCars = [
-  { id: 1, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040111' },
-  { id: 2, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040112' },
-  { id: 3, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040113' },
-  { id: 4, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040114' },
-  { id: 5, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040115' },
-  { id: 6, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040116' },
-  { id: 7, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040117' },
-  { id: 8, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040118' },
-  { id: 9, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040119' },
-  { id: 10, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040120' },
-  { id: 11, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040121' },
-  { id: 12, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040122' },
-  { id: 13, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040123' },
-  { id: 14, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040124' }
-];
+import { mockNewArrivals } from '../data/mockData';
 
 export default function NewArrivals() {
   return (
@@ -40,7 +24,7 @@ export default function NewArrivals() {
         <div className="block sm:hidden">
           {/* Mobile: Horizontal Scroll */}
           <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
-            {clearanceCars.map((car) => (
+            {mockNewArrivals.map((car) => (
               <div key={car.id} className="flex-shrink-0 w-[200px]">
                 <ClearanceCarCard car={car} />
               </div>

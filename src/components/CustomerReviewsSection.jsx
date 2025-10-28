@@ -1,29 +1,6 @@
 import CustomerReviewCard from './CustomerReviewCard';
 import svg1 from '../assets/SVG1.png';
-
-const customerReviews = [
-  {
-    id: 1,
-    productName: 'Toyota Ractis',
-    rating: 4,
-    text: 'Smooth process from start to finish. The car arrived in perfect condition, exactly as described. Highly recommend Hanami Japan for anyone looking for reliable Japanese imports.',
-    reviewerName: 'David R.'
-  },
-  {
-    id: 2,
-    productName: 'Honda Civic',
-    rating: 5,
-    text: 'Excellent service and communication throughout the entire process. The vehicle exceeded my expectations and arrived on time. Will definitely use Hanami Japan again.',
-    reviewerName: 'Sarah M.'
-  },
-  {
-    id: 3,
-    productName: 'Nissan Skyline',
-    rating: 4,
-    text: 'Great experience buying my dream car. The team was professional and helpful. The car was exactly as advertised and in excellent condition.',
-    reviewerName: 'Michael K.'
-  }
-];
+import { customerReviews } from '../data/mockData';
 
 export default function CustomerReviewsSection() {
   const renderOverallStars = () => {

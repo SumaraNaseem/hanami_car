@@ -1,21 +1,23 @@
+import { useState } from 'react';
 import TopSellerCard from './TopSellerCard';
 import usa from "../assets/usa.png";
 import svg1 from '../assets/SVG1.png';
-
-
-const topSellers = [
-  { id: 1, carName: 'TOYOTA NOAH', sellerName: 'Seller Name' },
-  { id: 2, carName: 'TOYOTA NOAH', sellerName: 'Seller Name' },
-  { id: 3, carName: 'TOYOTA NOAH', sellerName: 'Seller Name' },
-  { id: 4, carName: 'TOYOTA NOAH', sellerName: 'Seller Name' },
-  { id: 5, carName: 'TOYOTA NOAH', sellerName: 'Seller Name' },
-  { id: 6, carName: 'TOYOTA NOAH', sellerName: 'Seller Name' },
-  { id: 7, carName: 'TOYOTA NOAH', sellerName: 'Seller Name' }
-];
+import { mockTopSellers } from '../data/mockData';
+// import { useTopSellers } from '../hooks/useCars'; // Uncomment when API is ready
 
 export default function TopSellersSection() {
+  // API Integration - Uncomment when API is ready
+  // const { sellers, loading, error } = useTopSellers();
+  
+  // Temporary mock data until API is ready
+  const [sellers] = useState(mockTopSellers);
+  
+  // Uncomment when using API
+  // if (loading) return <div className="text-center p-8">Loading top sellers...</div>;
+  // if (error) return <div className="text-center p-8 text-red-600">Error loading sellers: {error}</div>;
+
   return (
-    <section className="py-4 sm:py-6 mt-5  sm:mx-4 lg:mx-6 bg-[#dfe7eb] rounded-lg">
+    <section className="py-4 sm:py-6 mt-5 sm:mx-4 lg:mx-6 bg-[#dfe7eb] rounded-lg">
       <div className="mx-auto px-3 sm:px-4 lg:px-6">
         {/* Header */}
         <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
@@ -29,7 +31,7 @@ export default function TopSellersSection() {
         <div className="block sm:hidden">
           {/* Mobile: Horizontal Scroll */}
           <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
-            {topSellers.map((seller) => (
+            {sellers.map((seller) => (
               <div key={seller.id} className="flex-shrink-0 w-[200px]">
                 <TopSellerCard seller={seller} />
               </div>
@@ -38,7 +40,7 @@ export default function TopSellersSection() {
         </div>
         
         <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
-          {topSellers.map((seller) => (
+          {sellers.map((seller) => (
             <TopSellerCard key={seller.id} seller={seller} />
           ))}
         </div>

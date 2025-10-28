@@ -1,24 +1,20 @@
+import { useState } from 'react';
 import ClearanceCarCard from './ClearanceCarCard';
 import svg1 from '../assets/SVG1.png';
-
-const clearanceCars = [
-  { id: 1, name: 'Mitsubishi Fuso ', price: 12750, discount: 36, ref: '3040111' },
-  { id: 2, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040112' },
-  { id: 3, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040113' },
-  { id: 4, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040114' },
-  { id: 5, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040115' },
-  { id: 6, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040116' },
-  { id: 7, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040117' },
-  { id: 8, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040118' },
-  { id: 9, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040119' },
-  { id: 10, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040120' },
-  { id: 11, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040121' },
-  { id: 12, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040122' },
-  { id: 13, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040123' },
-  { id: 14, name: 'Mitsubishi Fuso Fighter', price: 12750, discount: 36, ref: '3040124' }
-];
+import { mockClearanceCars } from '../data/mockData';
+// import { useClearanceCars } from '../hooks/useCars'; // Uncomment when API is ready
 
 export default function ClearanceSection() {
+  // API Integration - Uncomment when API is ready
+  // const { cars, loading, error } = useClearanceCars();
+  
+  // Temporary mock data until API is ready
+  const [cars] = useState(mockClearanceCars);
+  
+  // Uncomment when using API
+  // if (loading) return <div className="text-center p-8">Loading clearance cars...</div>;
+  // if (error) return <div className="text-center p-8 text-red-600">Error loading cars: {error}</div>;
+
   return (
     <section className="py-4">
       <div className="mx-auto sm:px-4 lg:px-6">
@@ -40,7 +36,7 @@ export default function ClearanceSection() {
         <div className="block sm:hidden">
           {/* Mobile: Horizontal Scroll */}
           <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
-            {clearanceCars.map((car) => (
+            {cars.map((car) => (
               <div key={car.id} className="flex-shrink-0 w-[200px]">
                 <ClearanceCarCard car={car} />
               </div>
@@ -49,7 +45,7 @@ export default function ClearanceSection() {
         </div>
         
         <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
-          {clearanceCars.map((car) => (
+          {cars.map((car) => (
             <ClearanceCarCard key={car.id} car={car} />
           ))}
         </div>
