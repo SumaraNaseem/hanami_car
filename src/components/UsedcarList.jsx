@@ -1,26 +1,8 @@
 import React from 'react'
-import vector37 from "../assets/vector37.png";
-import vector36 from "../assets/vector36.png";
-import vector35 from "../assets/vector35.png";
 import vector30 from "../assets/Vector30.png";
+import { filterOptions, specialCategories } from '../data/mockData';
 
 function UsedCar() {
-  const filterOptions = [
-    { name: "Sale", type: "text" },
-    { name: "Recommend", type: "text" },
-    { name: "Commercial", type: "text" },
-    { name: "Featured Stocks", type: "text" },
-    { name: "Limited Offer", type: "text" },
-    { name: "Vector 37", type: "image", image: vector37 },
-    { name: "Vector 36", type: "image", image: vector36 },
-    { name: "Vector 35", type: "image", image: vector35 }
-  ];
-
-  const specialCategories = [
-    { name: "Singapore Deals", bgColor: "bg-red-600", textColor: "text-white", borderColor: "border-white" },
-    { name: "Cars For USA", bgColor: "bg-blue-600", textColor: "text-white", borderColor: "border-white" },
-    { name: "SUPERCARS", bgColor: "bg-gray-800", textColor: "text-blue-300", borderColor: "border-blue-300" }
-  ];
 
   return (
     <section className="bg-[#ffffff] mx-0 sm:mx-4 lg:mx-6 py-3 px-3 sm:px-4 lg:px-6 relative z-10">

@@ -1,20 +1,8 @@
 import React from 'react'
-import vector37 from "../assets/vector37.png";
-import vector36 from "../assets/vector36.png";
-import vector35 from "../assets/vector35.png";
 import vector30 from "../assets/Vector30.png";
+import { filterOptions } from '../data/mockData';
 
 function UsedCar() {
-  const filterOptions = [
-    { name: "Sale", type: "text" },
-    { name: "Recommend", type: "text" },
-    { name: "Commercial", type: "text" },
-    { name: "Featured Stocks", type: "text" },
-    { name: "Limited Offer", type: "text" },
-    { name: "Vector 37", type: "image", image: vector37 },
-    { name: "Vector 36", type: "image", image: vector36 },
-    { name: "Vector 35", type: "image", image: vector35 }
-  ];
 
   return (
     <section className="bg-[#ffffff] sm:mx-4 lg:mx-6 py-3 px-3 sm:px-4 lg:px-6 rounded-md shadow-sm relative z-10">

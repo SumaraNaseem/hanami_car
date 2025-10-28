@@ -1,41 +1,5 @@
 import { useState } from 'react';
-import toyota from '../assets/toyota.png';
-import nishan from '../assets/nishan.png';
-import honda from '../assets/honda.png';
-import mitsubishi from '../assets/mitsubishi.png';
-import mazda from '../assets/mazda.png';
-import subaru from '../assets/subaru.png';
-import suzuki from '../assets/suzuki.png';
-import daishat from '../assets/dihatsu.png';
-import isuzu from '../assets/isuzu.png';
-import hino from '../assets/hino.png';
-import lexus from '../assets/lexus.png';
-import mercedes from '../assets/mercidas.png';
-import bmw from '../assets/bmw.png';
-import audi from '../assets/audi.png';
-import volvo from '../assets/volwo.png';
-import ford from '../assets/ford.png';
-import dongfeng from '../assets/dongfeng.png';
-import sedan from '../assets/Vector1.png';
-import coupe from"../assets/Vector2.png";
-import wagon from"../assets/Vector3.png";
-import hatchback from"../assets/Vector4.png";
-import suv from"../assets/Vector5.png";
-import convertible from"../assets/Vector6.png";
-import pickup from"../assets/Vector7.png";
-import trucks from"../assets/Vector8.png";
-import bus from"../assets/Vector9.png";
-import doller from"../assets/Vector10.png";
-import jdm from"../assets/vector15.png";
-import certified from"../assets/vector16.png";
-import leftHandDrive from"../assets/Vector11.png";
-import Manual from"../assets/Vector12.png";
-import Diesel from"../assets/Vector13.png";
-import fourWheelDrive from"../assets/vector14.png";
-import Japan from"../assets/vector17.png";
-import singapore from"../assets/vector18.png";
-import thailand from"../assets/vector19.png";
-import china from"../assets/vector20.png";
+import { carBrands, bodyTypes, priceRanges, categories, stockLocations } from '../data/mockData';
 
 
 
@@ -54,63 +18,6 @@ export default function Sidebar() {
       [section]: !prev[section]
     }));
   };
-
-  const carBrands = [
-    { name: 'Toyota', count: 30042, logo: toyota },
-    { name: 'Nissan', count: 2505, logo: nishan },
-    { name: 'Honda', count: 2016, logo: honda },
-    { name: 'Mitsubishi', count: 877, logo: mitsubishi },
-    { name: 'Mitsubishi Fuso', count: 190, logo: mitsubishi },
-    { name: 'Mazda', count: 996, logo: mazda },
-    { name: 'Subaru', count: 400, logo: subaru },
-    { name: 'Suzuki', count: 198, logo: suzuki },
-    { name: 'Daihatsu', count: 190, logo: daishat },
-    { name: 'Isuzu', count: 190, logo: isuzu },
-    { name: 'Hino', count: 141, logo: hino },
-    { name: 'Lexus', count: 100, logo: lexus },
-    { name: 'Mercedes-Benz', count: 68, logo: mercedes },
-    { name: 'BMW', count: 34, logo: bmw },
-    { name: 'Audi', count: 10, logo: audi },
-    { name: 'Volvo', count: 6, logo: volvo },
-    { name: 'Ford', count: 2, logo: ford },
-    { name: 'Dong Feng', count: 1, logo:dongfeng }
-  ];
-
-  const bodyTypes = [
-    { name: 'Sedan', count: 2505, icon: sedan },
-    { name: 'Coupe', count: 240, icon: coupe },
-    { name: 'Wagon', count: 400, icon: wagon },
-    { name: 'Hatchback', count: 260, icon: hatchback },
-    { name: 'SUV', count: 190, icon: suv },
-    { name: 'Convertible', count: 14, icon: convertible },
-    { name: 'Pickup (MiniBus)', count: 20, icon: pickup },
-    { name: 'Trucks', count: 10, icon: trucks },
-    { name: 'Bus', count: 10, icon: bus }
-  ];
-
-  const priceRanges = [
-    { name: 'Used Cars under $1000', count: 0, icon: doller },
-    { name: 'Used Cars under $2000', count: 0, icon: doller },
-    { name: 'Used Cars under $3000', count: 0, icon: doller },
-    { name: 'Used Cars under $4000', count: 0, icon: doller },
-    { name: 'Used Cars under $5000', count: 0, icon: doller }
-  ];
-
-  const categories = [
-    { name: 'Left Hand Drive', count: 0, icon: leftHandDrive },
-    { name: 'Manual', count: 0, icon: Manual },
-    { name: 'Diesel', count: 0, icon: Diesel },
-    { name: '4WD', count: 0, icon: fourWheelDrive },
-    { name: 'JDM', count: 0, icon: jdm },
-    { name: 'Certified Dealer', count: 0, icon: certified }
-  ];
-
-  const stockLocations = [
-    { name: 'Japan', count: 348, flag: Japan },
-    { name: 'Singapore', count: 84, flag: singapore },
-    { name: 'Thailand', count: 16, flag: thailand },
-    { name: 'China', count: 4, flag: china }
-  ];
 
   const SectionHeader = ({ title, isExpanded, onToggle }) => (
     <div 
